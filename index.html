@@ -2,131 +2,315 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Tặng em ❤️</title>
-  <link rel="stylesheet" href="./style.css">
-
-<meta property="og:title"              content="Tặng em Ngọc Oanh" />
-<meta property="og:description"        content="Năm mới vui vẻ nha em! Đừng buồn với suy nghĩ nhiều nữa nha em. " />
-<meta property="og:image"              content="https://img5.thuthuatphanmem.vn/uploads/2021/08/25/hinh-ve-cap-doi-cute_085652067.jpg" /> 
+  <title> ❤️</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
- 
   <style>
-    body {
-  font-size: 16px;
-  font-family: "Helvetica", "Arial", sans-serif;
-  text-align: center;
-  background-color: #e9d2de;
-}
-
-.bubbly-button {
-  font-family: "Helvetica", "Arial", sans-serif;
-  display: inline-block;
-  font-size: 1em;
-  padding: 20px 30px;
-  margin-top: 500px;
-  margin-bottom: 60px;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: #ff0081;
-  color: #fff;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
+    @charset "UTF-8";
+*, *:before, *:after {
   position: relative;
-  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
-}
-.bubbly-button:focus {
-  outline: 0;
-}
-.bubbly-button:before, .bubbly-button:after {
-  position: absolute;
-  content: "";
-  display: block;
-  width: 140%;
-  height: 100%;
-  left: -20%;
-  z-index: -1000;
-  transition: all ease-in-out 0.5s;
-  background-repeat: no-repeat;
-}
-.bubbly-button:before {
-  display: none;
-  top: -75%;
-  background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
-  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
-}
-.bubbly-button:after {
-  display: none;
-  bottom: -75%;
-  background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
-  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
-}
-.bubbly-button:active {
-  transform: scale(0.9);
-  background-color: #e60074;
-  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
-}
-.bubbly-button.animate:before {
-  display: block;
-  animation: topBubbles ease-in-out 0.75s forwards;
-}
-.bubbly-button.animate:after {
-  display: block;
-  animation: bottomBubbles ease-in-out 0.75s forwards;
+  box-sizing: border-box;
 }
 
-@keyframes topBubbles {
-  0% {
-    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+:root {
+  --color-bg: #FDF1F2;
+  --color-heart: #EA442B;
+  --easing: cubic-bezier(.7,0,.3,1);
+  --duration: .5s;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.like-button {
+  font-size: 35vmin;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  width: 1em;
+  height: 1em;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  z-index: 2;
+  transition: transform var(--duration) var(--easing);
+  cursor: pointer;
+}
+.like-button:before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.3);
+  border-radius: inherit;
+  transition: inherit;
+}
+.like-button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: inherit;
+  z-index: -1;
+}
+.like-button:active:before {
+  -webkit-animation: depress-shadow var(--duration) var(--easing) both;
+          animation: depress-shadow var(--duration) var(--easing) both;
+}
+.like-button:focus:after {
+  -webkit-animation: depress var(--duration) var(--easing) both;
+          animation: depress var(--duration) var(--easing) both;
+}
+@-webkit-keyframes depress {
+  from, to {
+    transform: none;
   }
   50% {
-    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
-  }
-  100% {
-    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
-    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    transform: translateY(5%) scale(0.9);
   }
 }
-@keyframes bottomBubbles {
-  0% {
-    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+@keyframes depress {
+  from, to {
+    transform: none;
   }
   50% {
-    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+    transform: translateY(5%) scale(0.9);
+  }
+}
+@-webkit-keyframes depress-shadow {
+  from, to {
+    transform: none;
+  }
+  50% {
+    transform: scale(0.5);
+  }
+}
+@keyframes depress-shadow {
+  from, to {
+    transform: none;
+  }
+  50% {
+    transform: scale(0.5);
+  }
+}
+
+.like-wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.like-wrapper > * {
+  margin: auto;
+  grid-area: 1/1;
+}
+
+.heart {
+  width: 0.5em;
+  height: 0.5em;
+  display: block;
+  transform-origin: center 80%;
+}
+.heart > path {
+  stroke: var(--color-heart);
+  stroke-width: 2;
+  fill: transparent;
+  transition: fill var(--duration) var(--easing);
+}
+.like-button:focus .heart > path {
+  fill: var(--color-heart);
+}
+.like-button:focus .heart {
+  -webkit-animation: heart-bounce var(--duration) var(--easing);
+          animation: heart-bounce var(--duration) var(--easing);
+}
+@-webkit-keyframes heart-bounce {
+  40% {
+    transform: scale(0.7);
+  }
+  0%, 80%, 100% {
+    transform: scale(1);
+  }
+}
+@keyframes heart-bounce {
+  40% {
+    transform: scale(0.7);
+  }
+  0%, 80%, 100% {
+    transform: scale(1);
+  }
+}
+
+/* Added wrapper to prevent layout jank with resizing particles */
+.particles {
+  width: 1px;
+  height: 1px;
+}
+
+.particle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.1em;
+  width: 0.1em;
+  border-radius: 0.05em;
+  background-color: var(--color);
+  --percentage: calc( var(--i) / var(--total-particles) );
+  --Θ: calc( var(--percentage) * 1turn );
+  transform: translate(-50%, -50%) rotate(var(--Θ)) translateY(0) scaleY(0);
+  transition: all var(--duration) var(--easing);
+}
+.like-button:focus .particle {
+  -webkit-animation: particles-out calc(var(--duration) * 1.2) var(--easing) forwards;
+          animation: particles-out calc(var(--duration) * 1.2) var(--easing) forwards;
+}
+@-webkit-keyframes particles-out {
+  50% {
+    height: 0.3em;
+  }
+  50%, 60% {
+    height: 0.3em;
+    transform: translate(-50%, -50%) rotate(var(--Θ)) translateY(0.8em) scale(1);
+  }
+  60% {
+    height: 0.2em;
   }
   100% {
-    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
-    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    transform: translate(-50%, -50%) rotate(var(--Θ)) translateY(1em) scale(0);
   }
+}
+@keyframes particles-out {
+  50% {
+    height: 0.3em;
+  }
+  50%, 60% {
+    height: 0.3em;
+    transform: translate(-50%, -50%) rotate(var(--Θ)) translateY(0.8em) scale(1);
+  }
+  60% {
+    height: 0.2em;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(var(--Θ)) translateY(1em) scale(0);
+  }
+}
+
+.ripple {
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+}
+.ripple:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0.4em solid var(--color-heart);
+  border-radius: inherit;
+  transform: scale(0);
+}
+.like-button:focus .ripple:before {
+  -webkit-animation: ripple-out var(--duration) var(--easing);
+          animation: ripple-out var(--duration) var(--easing);
+}
+@-webkit-keyframes ripple-out {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(5);
+  }
+}
+@keyframes ripple-out {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(5);
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg);
+}
+
+/* Reset the animation when clicking again! */
+.like-button:focus {
+  pointer-events: none;
+  cursor: normal;
 }
   </style>
 <!-- partial:index.partial.html -->
-<button class="bubbly-button"><a href="./index1.html" style="text-decoration: none;
-color: #fff; padding: 12px;
-font-weight: 400;">Em nhấn vào đi :3</a></button>
-<!-- partial -->
-  <script  src="./script.js"></script>
+<!-- <a href="https://youtu.be/may0MddSzNc" target="_blank" data-keyframers-credit style="color: #000"></a> -->
+<script src="https://codepen.io/shshaw/pen/QmZYMG.js"></script>
+
+<button class="like-button">
+  <div class="like-wrapper">
+    <a href="./index1.html" class="ripple" onmouseover="redirectToIndex()" onmouseout="resetHref()"></a>
+    
+
+    <svg class="heart" width="24" height="24" viewBox="0 0 24 24">
+      <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
+    </svg>
+    <div class="particles" style="--total-particles: 6">
+      <div class="particle" style="--i: 1; --color: #7642F0"></div>
+      <div class="particle" style="--i: 2; --color: #AFD27F"></div>
+      <div class="particle" style="--i: 3; --color: #DE8F4F"></div>
+      <div class="particle" style="--i: 4; --color: #D0516B"></div>
+      <div class="particle" style="--i: 5; --color: #5686F2"></div>
+      <div class="particle" style="--i: 6; --color: #D53EF3"></div>
+    </div>
+  </div>
+</button>
+
 <script>
-  var animateButton = function(e) {
 
-e.preventDefault;
-//reset animation
-e.target.classList.remove('animate');
+  // Nope
+// ...except to show the animation on load
+let b = document.querySelector('button');
+setTimeout(()=>b.focus(), 100);
+setTimeout(()=>b.blur(), 2000);
 
-e.target.classList.add('animate');
-setTimeout(function(){
-  e.target.classList.remove('animate');
-},700);
-};
 
-var bubblyButtons = document.getElementsByClassName("bubbly-button");
-
-for (var i = 0; i < bubblyButtons.length; i++) {
-bubblyButtons[i].addEventListener('click', animateButton, false);
-}
 </script>
+<!-- partial -->
+  <!-- <script  src="./script.js"></script> -->
+  <style>
+    #snowflakeContainer{position:absolute;left:0px;top:0px;}
+    .snowflake{padding-left:15px;font-size:14px;line-height:24px;position:fixed;color:#ebebeb;user-select:none;z-index:1000;-moz-user-select:none;-ms-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;}
+    .snowflake:hover {cursor:default}
+  </style>
+  <div id='snowflakeContainer'>
+  <p class='snowflake'>💗</p>
+  </div>
+  <script style='text/javascript'>
+    //<![CDATA[
+    var requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var transforms=["transform","msTransform","webkitTransform","mozTransform","oTransform"];var transformProperty=getSupportedPropertyName(transforms);var snowflakes=[];var browserWidth;var browserHeight;var numberOfSnowflakes=50;var resetPosition=false;function setup(){window.addEventListener("DOMContentLoaded",generateSnowflakes,false);window.addEventListener("resize",setResetFlag,false)}setup();function getSupportedPropertyName(b){for(var a=0;a<b.length;a++){if(typeof document.body.style[b[a]]!="undefined"){return b[a]}}return null}function Snowflake(b,a,d,e,c){this.element=b;this.radius=a;this.speed=d;this.xPos=e;this.yPos=c;this.counter=0;this.sign=Math.random()<0.5?1:-1;this.element.style.opacity=0.5+Math.random();this.element.style.fontSize=4+Math.random()*30+"px"}Snowflake.prototype.update=function(){this.counter+=this.speed/5000;this.xPos+=this.sign*this.speed*Math.cos(this.counter)/40;this.yPos+=Math.sin(this.counter)/40+this.speed/30;setTranslate3DTransform(this.element,Math.round(this.xPos),Math.round(this.yPos));if(this.yPos>browserHeight){this.yPos=-50}};function setTranslate3DTransform(a,c,b){var d="translate3d("+c+"px, "+b+"px, 0)";a.style[transformProperty]=d}function generateSnowflakes(){var b=document.querySelector(".snowflake");var h=b.parentNode;browserWidth=document.documentElement.clientWidth;browserHeight=document.documentElement.clientHeight;for(var d=0;d<numberOfSnowflakes;d++){var j=b.cloneNode(true);h.appendChild(j);var e=getPosition(50,browserWidth);var a=getPosition(50,browserHeight);var c=5+Math.random()*40;var g=4+Math.random()*10;var f=new Snowflake(j,g,c,e,a);snowflakes.push(f)}h.removeChild(b);moveSnowflakes()}function moveSnowflakes(){for(var b=0;b<snowflakes.length;b++){var a=snowflakes[b];a.update()}if(resetPosition){browserWidth=document.documentElement.clientWidth;browserHeight=document.documentElement.clientHeight;for(var b=0;b<snowflakes.length;b++){var a=snowflakes[b];a.xPos=getPosition(50,browserWidth);a.yPos=getPosition(50,browserHeight)}resetPosition=false}requestAnimationFrame(moveSnowflakes)}function getPosition(b,a){return Math.round(-1*b+Math.random()*(a+2*b))}function setResetFlag(a){resetPosition=true};
+    //]]>
+  </script>
 </body>
 </html>
